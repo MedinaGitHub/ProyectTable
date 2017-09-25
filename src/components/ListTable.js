@@ -1,5 +1,6 @@
 import React from 'react';
 import Tables from './Tables';
+import { CardDeck} from 'reactstrap';
 
 const ListTable = ({ tables }) => {
 
@@ -7,27 +8,24 @@ const ListTable = ({ tables }) => {
 
   const tablesNodes = tables.map(table => (
       <Tables
-          key={table.name}
-          {...tables}
+          key={table.id_product_table}
+          {...table}
       />
   ));
 
   return (
-      <div>
-          <ul
 
-          >
+         <CardDeck>
               {tablesNodes}
-          </ul>
+          </CardDeck>
 
-      </div>
   );
 };
 
 ListTable.propTypes = {
   tables: React.PropTypes.arrayOf(
       React.PropTypes.shape({
-          name: React.PropTypes.string.isRequired,
+          firstname: React.PropTypes.string.isRequired,
 
       }).isRequired
   ).isRequired,

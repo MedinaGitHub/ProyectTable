@@ -5,11 +5,12 @@ import { requestTables} from '../actionCreators';
 
 class ListContainer extends React.Component {
   componentWillMount() {
-    if (!this.props.tables || !this.props.tables.length) {
-      console.log( this.props  )
-      this.props.requestTables();
-      //this.setState({ tables: requestTables() })
-    }
+
+    //
+    console.log('WILL');
+
+
+
   }
 
   render() {
@@ -19,11 +20,10 @@ class ListContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {//este objeto se entrega como props Representacional
-    tables: state.tables//cart como estado compartido de redux
-  };
-}
+const mapStateToProps = (state) => ({
+  tables: state.main.tables,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   requestTables: () => dispatch(requestTables()),
 });

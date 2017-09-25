@@ -11,19 +11,14 @@ function mainReducer(state = {
     case 'REQUEST_TABLE':
     console.log(action);
         return Object.assign({}, state, {
-          tables: [
-            ...state.tables,
-            action.tables,
-          ]
+          tables:  action.tables
+
         });
 
     case 'ADD_TABLE':
+    console.log(state);
         return Object.assign({}, state, {
-
-          tables: [
-            ...state.addTable,
-            action.addTable,
-          ]
+        tables:  action.tables
         })
     default:
         return state;

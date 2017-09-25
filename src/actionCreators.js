@@ -26,12 +26,12 @@ export function addTableProduct() {
     const form = getState().form;
     console.log(form);
     const addTable = {
-      name: form.addTable.name.value,
-      price: form.addTable.price.value,
-      characteristic : form.addTable.characteristic.value,
-      entry_date : form.addTable.entry_date.value,
-      type_table : form.addTable.type_table.value,
-      maker : form.addTable.maker.value,
+      name: form.tables.name.value,
+      price: form.tables.price.value,
+      characteristic : form.tables.characteristic.value,
+      entry_date : form.tables.entry_date.value,
+      type_table : form.tables.type_table.value,
+      maker : form.tables.maker.value,
 
     };
 
@@ -42,11 +42,19 @@ export function addTableProduct() {
        }
 
     return axios.post("https://infinite-garden-29669.herokuapp.com/insertTable", addTable, headers )
-  .then(function (response) {
-    dispatch({
-      type: 'ADD_TABLE',
-      addTable,
-    });
+   .then(function (response) {
+
+      axios.get("https://infinite-garden-29669.herokuapp.com/table") // se retorna una promesa
+     .then(response => {
+       console.log('asfasfasf')
+       console.log(response);
+       dispatch({
+         type:"ADD_TABLE",
+         tables : response.data.results
+       })
+     })
+
+
   })
   .catch(function (error) {
     console.log(error);

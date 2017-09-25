@@ -14,7 +14,7 @@ export default () => {
         <Collapse  navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink  tag={Link} to="/Tables">Ver Mesas</NavLink>
+              <NavLink  tag={Link} to="/ListContainer">Ver Mesas</NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={Link} to ="/FormContainer">Fromulario</NavLink>
