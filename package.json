@@ -3,9 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "0.16.2",
+    "bootstrap": "4.0.0-alpha.6",
+    "enzyme": "2.9.1",
     "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-addons-transition-group": "^15.6.0",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.13"
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "4.1.1",
+    "react-scripts": "1.0.13",
+    "reactstrap": "4.8.0",
+    "redux": "3.6.0",
+    "redux-devtools": "3.3.1",
+    "redux-form": "5.3.2",
+    "redux-thunk": "2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
